@@ -34,3 +34,4 @@ cd msdocs-app-service-sqldb-dotnetcore
 dotnet ef database update
 dotnet run
 ```
+minor to keep going
