@@ -26,6 +26,7 @@ jobs:
         az account show
         az group list
         pwd
+        ls
     
     - name: Set up .NET Core
       uses: actions/setup-dotnet@v1
