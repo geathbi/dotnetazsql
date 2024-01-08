@@ -24,7 +24,9 @@ jobs:
     - name: 'Run Azure CLI commands'
       run: |
         az account show
-        az group list                
+        az group list
+        pwd
+        $GITHUB_WORKSPACE
     
     - name: Set up .NET Core
       uses: actions/setup-dotnet@v1
