@@ -25,8 +25,7 @@ jobs:
       run: |
           az account show
           az group list
-          pwd
-          get-childitem 
+          pwds          
       
     - name: Azure PowerShell Action
       uses: Azure/powershell@v1
