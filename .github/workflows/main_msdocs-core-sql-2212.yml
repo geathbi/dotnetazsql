@@ -10,7 +10,7 @@ env:
   AZURE_WEBAPP_PACKAGE_PATH: DotNetCoreSqlDb/published
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 7.0.x
-  WORKING_DIRECTORY: /DotNetCoreSqlDb
+  WORKING_DIRECTORY: DotNetCoreSqlDb
 
 jobs: 
   build-and-deploy:
@@ -36,7 +36,7 @@ jobs:
     - name: Build with dotnet
       run: |
        dotnet restore "${{ env.WORKING_DIRECTORY }}"
-       dotnet build "${{ env.WORKING_DIRECTORY }}" --configuration Release
+       dotnet build "${{ env.WORKING_DIRECTORY }}/DotNetCoreSqlDb.csproj" --configuration Release
               
     - name: dotnet publish
       run: dotnet publish "${{ env.WORKING_DIRECTORY }}"  -c Release -o "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
