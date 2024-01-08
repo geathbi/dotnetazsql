@@ -3,11 +3,16 @@
 
 name: Build and deploy ASP.Net Core app to Azure Web App - wsrdemo0701
 
+permissions:
+  id-token: write
+  contents: read
+  
 on:
   push:
     branches:
       - main
   workflow_dispatch:
+ 
 
 jobs:
   build:
