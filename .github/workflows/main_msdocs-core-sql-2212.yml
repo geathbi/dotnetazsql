@@ -34,7 +34,7 @@ jobs:
         include-prerelease: true
   
     - name: Build with dotnet
-      run: dotnet build ./DotNetCoreSqlDb.csproj --configuration ${{ env.CONFIGURATION }} --no-restore
+      run: dotnet build ../DotNetCoreSqlDb.csproj --configuration ${{ env.CONFIGURATION }} --no-restore
               
     - name: dotnet publish
       run: dotnet publish "${{ env.WORKING_DIRECTORY }}"  -c Release -o "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
