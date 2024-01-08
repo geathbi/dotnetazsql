@@ -3,16 +3,12 @@
 
 name: Build and deploy ASP.Net Core app to Azure Web App - wsrdemo0701
 
-permissions:
-  id-token: write
-  contents: read
-  
 on:
   push:
     branches:
       - main
   workflow_dispatch:
- 
+
 
 jobs:
   build:
@@ -25,9 +21,7 @@ jobs:
       - name: 'Az CLI login'
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
   
       - name: 'Run Azure CLI commands'
         run: |
