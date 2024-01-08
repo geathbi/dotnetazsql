@@ -27,6 +27,12 @@ jobs:
           az group list
           pwd
           get-childitem 
+      
+    - name: Azure PowerShell Action
+      uses: Azure/powershell@v1
+      with:    
+        inlineScript: Get-ChildItem
+        azPSVersion: "latest"
     
     - name: Set up .NET Core
       uses: actions/setup-dotnet@v1
